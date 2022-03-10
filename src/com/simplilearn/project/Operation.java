@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Operation {
 
 	public Operation() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void addFile() throws IOException {
@@ -43,8 +43,7 @@ public class Operation {
 		
 		dir.close();
 		fileName.close();
-		text.close();
-		
+		text.close();		
 	}
 
 	public void deleteFile() {
@@ -56,7 +55,6 @@ public class Operation {
 		Scanner fileName = new Scanner(System.in);
 		String deleteFile = fileName.nextLine();
 		
-
 		File oldFile = new File(directory+"/"+deleteFile);
 		
 		if (oldFile.exists() == true) {
@@ -68,8 +66,7 @@ public class Operation {
 		}
 					
 		dir.close();
-		fileName.close();
-		
+		fileName.close();	
 	}
 
 	public void searchFile() {
@@ -82,6 +79,7 @@ public class Operation {
 		String searchFile = fileName.nextLine();
 		
 		File oldFile = new File(directory+"/"+searchFile);
+		
 		if (oldFile.exists() == true) {
 			System.out.println(searchFile+" found");
 		}
@@ -90,8 +88,7 @@ public class Operation {
 		}
 		
 		dir.close();
-		fileName.close();
-		
+		fileName.close();	
 	}
 
 }

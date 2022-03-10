@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Option {
 
 	public Option() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void mainMenu() throws IOException {
@@ -17,10 +17,9 @@ public class Option {
 		System.out.println("2. More Business Operations");
 		System.out.println("3. Close the Application");
 		
-		
 		Scanner main = new Scanner(System.in);
-		try {
-			
+		
+		try {	
 			int mainOption = main.nextInt();
 			
 			if (mainOption == 1) {
@@ -36,7 +35,6 @@ public class Option {
 				System.out.println("Choose valid option");
 				mainMenu();
 			}
-			
 		}
 		catch (InputMismatchException ex) {
 			System.out.println("Choose valid option");
@@ -44,16 +42,16 @@ public class Option {
 		}
 		
 		main.close();
-
 	}
 
 	public void option1() throws IOException {
 		System.out.println("Please enter the root directory");
+		
 		Scanner path = new Scanner(System.in);
 		String filePath = path.nextLine();
-		File file = new File(filePath);
-		
+		File file = new File(filePath);	
 		File[] fileList = file.listFiles();
+		
 		int i;
 		if (file.exists() && fileList.length > 0) {
 			for (i=0; i<fileList.length; i++) {
@@ -65,8 +63,7 @@ public class Option {
 			mainMenu();
 		}
 		
-		path.close();
-		
+		path.close();		
 	}
 
 	public void option2() throws IOException {
@@ -79,9 +76,9 @@ public class Option {
 		System.out.println("d. Show Previous Options");
 		
 		Scanner sub = new Scanner(System.in);
+	
 		try {
 			String subOption = sub.next();
-			System.out.println(subOption);
 			
 			if (subOption.equals("a")) {
 				opr.addFile();
@@ -98,8 +95,7 @@ public class Option {
 			else {
 				System.out.println("Choose valid option");
 				option2();
-			}
-			
+			}			
 		}
 		catch (InputMismatchException ex) {
 			System.out.println("Choose valid option");
@@ -113,6 +109,4 @@ public class Option {
 		System.out.println("Thank you for using the Application");
 	}
 	
-	
-
 }
